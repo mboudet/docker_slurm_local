@@ -3,7 +3,7 @@ FROM python:3.9-bullseye
 MAINTAINER Mateo Boudet <mateo.boudet@inrae.fr>
 
 RUN echo "deb https://depot.galaxyproject.org/apt/ $(bash -c '. /etc/os-release; echo ${VERSION_CODENAME:-bullseye}') main" | tee /etc/apt/sources.list.d/galaxy-depot.list
-RUN apt-key adv --keyserver keyserver.ubuntu.com:80 --recv-keys 18381AC8832160AF
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 18381AC8832160AF
 
 RUN apt-get -q update \
  && DEBIAN_FRONTEND=noninteractive apt-get -yq --no-install-recommends install \
