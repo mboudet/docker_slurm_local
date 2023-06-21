@@ -1,0 +1,9 @@
+sed -i "s/CPUVALUE/$MAX_CPUS/g" /tmp/slurm.conf
+sed -i "s/MEMORYVALUE/$MAX_MEM/g" /tmp/slurm.conf
+
+cp /tmp/slurm.conf /etc/slurm/slurm.conf
+chmod 755 /etc/slurm/
+
+service munge start
+slurmctld start
+slurmd start
