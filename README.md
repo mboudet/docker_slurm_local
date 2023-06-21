@@ -5,7 +5,7 @@ This image will contain a slurm node (and its controller), with the drmaa lib in
 The following environment variables are available: 
 ``` 
 MAX_CPUS: '1' #  Max number of core allocated to the compute node
-MAX_RAM: '4000' # Max memory (in Mo) allocated to the compute node
+MAX_MEM: '4000' # Max memory (in Mo) allocated to the compute node
 ```
 
 ## Using DRMAA
@@ -14,7 +14,8 @@ To use DRMAA, you need to pay attention to several things:
 #### DRMAA user
 Jobs will probably need to be launched by a user known by the scheduler. You will need to use the following options to configure this: 
 ``` 
-UID: the uid of the user GID: the gid of the user 
+UID: the uid of the user 
+GID: the gid of the user 
 RUN_USER: the username of the user 
 RUN_GROUP: the group of the user 
 OTHER_GID: list of supplementary gid (comma separated) which the user is also a member of 
